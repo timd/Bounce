@@ -27,7 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		F40A902D1BEBA111000C4AC0 /* BounceLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BounceLayout.swift; sourceTree = "<group>"; };
+		F40A902D1BEBA111000C4AC0 /* BounceLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BounceLayout.swift; sourceTree = SOURCE_ROOT; };
 		F429D4FB1BE896AB0067194D /* Bounce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bounce.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F429D4FE1BE896AB0067194D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F429D5001BE896AB0067194D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -61,7 +61,6 @@
 		F429D4F21BE896AB0067194D = {
 			isa = PBXGroup;
 			children = (
-				F40A902D1BEBA111000C4AC0 /* BounceLayout.swift */,
 				F429D4FD1BE896AB0067194D /* Bounce */,
 				F429D5121BE896AC0067194D /* BounceTests */,
 				F429D4FC1BE896AB0067194D /* Products */,
@@ -80,6 +79,7 @@
 		F429D4FD1BE896AB0067194D /* Bounce */ = {
 			isa = PBXGroup;
 			children = (
+				F40A902D1BEBA111000C4AC0 /* BounceLayout.swift */,
 				F429D4FE1BE896AB0067194D /* AppDelegate.swift */,
 				F429D5001BE896AB0067194D /* ViewController.swift */,
 				F429D5021BE896AB0067194D /* Main.storyboard */,

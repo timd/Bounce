@@ -72,7 +72,7 @@ extension ViewController {
     @IBAction func didTapRemove(sender: AnyObject) {
         
         // Don't attempt to remove the last item!
-        if cvData.count == 1 {
+        if cvData.count == 0 {
             return
         }
         

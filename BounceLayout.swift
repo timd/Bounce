@@ -85,8 +85,6 @@ class BounceLayout: UICollectionViewLayout {
     
     override func initialLayoutAttributesForAppearingItemAtIndexPath(itemIndexPath: NSIndexPath) -> UICollectionViewLayoutAttributes? {
     
-        print("initial: \(itemIndexPath.row)")
-        
         let attributes = UICollectionViewLayoutAttributes(forCellWithIndexPath: itemIndexPath)
         
         // Check to see if this indexPath is in the BeingUpdated list
@@ -124,17 +122,16 @@ class BounceLayout: UICollectionViewLayout {
         
         let attributes = UICollectionViewLayoutAttributes(forCellWithIndexPath: itemIndexPath)
         
-        // Check if this indexPath appears in the list of index paths being updated.
-        // If it doesn't, we can don't need to setup the center point
+        // Check to see if this indexPath is in the BeingUpdated list
+        // if it isn't, we can just bail out
         let indexFound = indexPathsBeingUpdated.indexOf { (element) -> Bool in
-            element == itemIndexPath
+            element.indexPathBeforeUpdate == itemIndexPath
         }
         
-        if (indexFound == nil) {
+        if indexFound == nil {
             return super.finalLayoutAttributesForDisappearingItemAtIndexPath(itemIndexPath)
         }
 
-        
         // Test to see if we're handling the removal of the first item as it moves to make
         // way for the second one.  In this case, there will be 2 items, and the handling indexPath.row
         // of the item we're dealing with will be 0
@@ -160,9 +157,6 @@ class BounceLayout: UICollectionViewLayout {
     }
 
     override func prepareForCollectionViewUpdates(updateItems: [UICollectionViewUpdateItem]) {
-
-        print("prepare: \(updateItems.first!.indexPathAfterUpdate.row)")
-        
         indexPathsBeingUpdated = updateItems
     }
     
@@ -200,8 +194,6 @@ class BounceLayout: UICollectionViewLayout {
 
     func calculateCenterForItemAtIndexPath(indexPath: NSIndexPath) -> CGPoint {
         
-        print("calcCenter: \(indexPath.row)")
-        
         // If there's only one item, then it should be centered
         if (collectionView!.numberOfItemsInSection(0) == 1) {
             return calculateCenterForFirstItem()
@@ -227,12 +219,7 @@ class BounceLayout: UICollectionViewLayout {
     }
 
     func calculateCenterForFirstItem() -> CGPoint {
-        
-        let xPosition = collectionView!.bounds.size.width / 2;
-        let yPosition = 0 + (itemSize.height / 2) + sidePadding;
-        
-        return CGPointMake(xPosition, yPosition);
-        
+        return CGPointMake(collectionView!.bounds.size.width / 2, collectionView!.bounds.size.height/2)
     }
 
 }
