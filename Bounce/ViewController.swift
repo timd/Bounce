@@ -69,24 +69,18 @@ extension ViewController {
     
     }
 
-    @IBAction func didTapRemove(sender: AnyObject) {
+    @IBAction func didTapRemove(indexPath: NSIndexPath) {
         
         // Don't attempt to remove the last item!
         if cvData.count == 0 {
             return
         }
         
-        // Get index of last item
-        let index = cvData.count - 1
-        
         // Remove it from the data array
-        cvData.removeAtIndex(index)
-        
-        // Create an NSIndexPath object for the item being removed
-        let removedIndexPath = NSIndexPath(forItem: index, inSection: 0)
+        cvData.removeAtIndex(indexPath.row)
         
         // Now update the collection view
-        collectionView.deleteItemsAtIndexPaths([removedIndexPath])
+        collectionView.deleteItemsAtIndexPaths([indexPath])
 
     }
 }
@@ -112,6 +106,23 @@ extension ViewController: UICollectionViewDataSource {
         cell.contentView.layer.borderWidth = 1.0
         
         return cell
+        
+    }
+    
+}
+
+extension ViewController: UICollectionViewDelegate {
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
+        switch indexPath.row {
+            
+        case 0:
+            didTapAdd(indexPath)
+            
+        default:
+            didTapRemove(indexPath)
+        }
         
     }
     
