@@ -69,7 +69,14 @@ extension ViewController {
     
     }
 
-    @IBAction func didTapRemove(indexPath: NSIndexPath) {
+    @IBAction func didTapRemoveItem(sender: AnyObject) {
+        
+        let itemIndex = cvData.count - 1
+        
+        removeItemAtIndexPath(NSIndexPath(forItem: itemIndex, inSection: 0))
+    }
+    
+    func removeItemAtIndexPath(indexPath: NSIndexPath) {
         
         // Don't attempt to remove the last item!
         if cvData.count == 0 {
@@ -101,9 +108,11 @@ extension ViewController: UICollectionViewDataSource {
 
         let cellLabel = cell.viewWithTag(1000) as! UILabel
         cellLabel.text = "Cell \(indexPath.row)"
+        cellLabel.textColor = UIColor.whiteColor()
         
         cell.contentView.layer.borderColor = UIColor.cyanColor().CGColor
-        cell.contentView.layer.borderWidth = 1.0
+        cell.contentView.backgroundColor = UIColor.blackColor()
+        cell.contentView.layer.borderWidth = 3.0
         
         return cell
         
@@ -121,7 +130,7 @@ extension ViewController: UICollectionViewDelegate {
             didTapAdd(indexPath)
             
         default:
-            didTapRemove(indexPath)
+            removeItemAtIndexPath(indexPath)
         }
         
     }

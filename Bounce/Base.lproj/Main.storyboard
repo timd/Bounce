@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -51,14 +52,22 @@
                                 </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wUM-6g-LIU">
-                                <rect key="frame" x="525" y="562" width="55" height="30"/>
+                                <rect key="frame" x="525" y="540" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="6pi-AW-5gw"/>
+                                    <constraint firstAttribute="height" constant="60" id="cGZ-cF-Hfv"/>
+                                </constraints>
                                 <state key="normal" title="Remove"/>
                                 <connections>
-                                    <action selector="didTapRemove:" destination="BYZ-38-t0r" eventType="touchUpInside" id="h1b-ZF-0Bw"/>
+                                    <action selector="didTapRemoveItem:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1T1-oe-Y3k"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jt0-s6-5Ly">
-                                <rect key="frame" x="20" y="562" width="30" height="30"/>
+                                <rect key="frame" x="20" y="540" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Bkv-Tn-PcD"/>
+                                    <constraint firstAttribute="width" constant="60" id="ZeY-Jc-8nc"/>
+                                </constraints>
                                 <state key="normal" title="Add"/>
                                 <connections>
                                     <action selector="didTapAdd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HYH-vH-Rbt"/>
@@ -68,14 +77,20 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="zid-vu-wgP" secondAttribute="trailing" id="2It-Z6-mbx"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="wUM-6g-LIU" secondAttribute="bottom" id="4nt-gu-4Fe"/>
                             <constraint firstItem="wUM-6g-LIU" firstAttribute="leading" secondItem="zid-vu-wgP" secondAttribute="trailing" constant="-75" id="8qa-z4-c8G"/>
+                            <constraint firstItem="jt0-s6-5Ly" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Abo-c9-aZH"/>
                             <constraint firstItem="zid-vu-wgP" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="G6e-SA-8to"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="zid-vu-wgP" secondAttribute="bottom" id="NBH-2H-Fzg"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="jt0-s6-5Ly" secondAttribute="bottom" constant="8" id="p93-wU-WPU"/>
-                            <constraint firstItem="wUM-6g-LIU" firstAttribute="top" secondItem="zid-vu-wgP" secondAttribute="bottom" constant="-38" id="wTw-As-QYe"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="jt0-s6-5Ly" secondAttribute="bottom" id="p93-wU-WPU"/>
                             <constraint firstItem="zid-vu-wgP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="wcG-1V-3Bq"/>
-                            <constraint firstItem="zid-vu-wgP" firstAttribute="leading" secondItem="jt0-s6-5Ly" secondAttribute="trailing" constant="-50" id="yjq-o9-jUx"/>
+                            <constraint firstItem="zid-vu-wgP" firstAttribute="leading" secondItem="jt0-s6-5Ly" secondAttribute="trailing" constant="50" id="yjq-o9-jUx"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="yjq-o9-jUx"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="zid-vu-wgP" id="6hU-pq-PAV"/>
