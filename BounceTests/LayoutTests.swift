@@ -101,6 +101,31 @@ class LayoutTests: XCTestCase {
         XCTAssertEqual(layout.radiusOffset, (2 * M_PI) / 3)
 
     }
+    
+    func test_WhenCalculatingFinalCenterPoint_CalculatesCorrectly() {
+        
+        let cv = UICollectionView(frame: CGRectMake(0, 0, 400, 400), collectionViewLayout: layout)
+        
+        layout.itemSize = CGSizeMake(50, 50)
+        
+        layout.numberOfItems = 4
+
+        let indexPath1 = NSIndexPath(forItem: 0, inSection: 0)
+        let indexPath2 = NSIndexPath(forItem: 1, inSection: 0)
+        let indexPath3 = NSIndexPath(forItem: 2, inSection: 0)
+        let indexPath4 = NSIndexPath(forItem: 3, inSection: 0)
+        
+        let attr1 = layout.layoutAttributesForItemAtIndexPath(indexPath1)
+        let attr2 = layout.layoutAttributesForItemAtIndexPath(indexPath2)
+        let attr3 = layout.layoutAttributesForItemAtIndexPath(indexPath3)
+        let attr4 = layout.layoutAttributesForItemAtIndexPath(indexPath4)
+        
+        XCTAssertEqual(attr1?.center, CGPointMake(200, 200))
+        XCTAssertEqual(attr2?.center, CGPointMake(400, 200))
+        XCTAssertEqual(attr3?.center, CGPointMake(200, 400))
+        XCTAssertEqual(attr4?.center, CGPointMake(0, 200))
+        
+    }
 
     
 }

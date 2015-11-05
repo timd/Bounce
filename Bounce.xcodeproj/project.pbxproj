@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F40A902E1BEBA111000C4AC0 /* BounceLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40A902D1BEBA111000C4AC0 /* BounceLayout.swift */; };
 		F429D4FF1BE896AB0067194D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F429D4FE1BE896AB0067194D /* AppDelegate.swift */; };
 		F429D5011BE896AB0067194D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F429D5001BE896AB0067194D /* ViewController.swift */; };
 		F429D5041BE896AB0067194D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F429D5021BE896AB0067194D /* Main.storyboard */; };
 		F429D5061BE896AB0067194D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F429D5051BE896AB0067194D /* Assets.xcassets */; };
 		F429D5091BE896AB0067194D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F429D5071BE896AB0067194D /* LaunchScreen.storyboard */; };
-		F429D51F1BE8992C0067194D /* BounceLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F429D51E1BE8992B0067194D /* BounceLayout.swift */; };
 		F429D5211BE8A5400067194D /* LayoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F429D5201BE8A5400067194D /* LayoutTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F40A902D1BEBA111000C4AC0 /* BounceLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BounceLayout.swift; sourceTree = "<group>"; };
 		F429D4FB1BE896AB0067194D /* Bounce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bounce.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F429D4FE1BE896AB0067194D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F429D5001BE896AB0067194D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -36,7 +37,6 @@
 		F429D50A1BE896AB0067194D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F429D50F1BE896AC0067194D /* BounceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BounceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F429D5151BE896AC0067194D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F429D51E1BE8992B0067194D /* BounceLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BounceLayout.swift; sourceTree = "<group>"; };
 		F429D5201BE8A5400067194D /* LayoutTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -61,6 +61,7 @@
 		F429D4F21BE896AB0067194D = {
 			isa = PBXGroup;
 			children = (
+				F40A902D1BEBA111000C4AC0 /* BounceLayout.swift */,
 				F429D4FD1BE896AB0067194D /* Bounce */,
 				F429D5121BE896AC0067194D /* BounceTests */,
 				F429D4FC1BE896AB0067194D /* Products */,
@@ -81,7 +82,6 @@
 			children = (
 				F429D4FE1BE896AB0067194D /* AppDelegate.swift */,
 				F429D5001BE896AB0067194D /* ViewController.swift */,
-				F429D51E1BE8992B0067194D /* BounceLayout.swift */,
 				F429D5021BE896AB0067194D /* Main.storyboard */,
 				F429D5051BE896AB0067194D /* Assets.xcassets */,
 				F429D5071BE896AB0067194D /* LaunchScreen.storyboard */,
@@ -200,7 +200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F429D51F1BE8992C0067194D /* BounceLayout.swift in Sources */,
+				F40A902E1BEBA111000C4AC0 /* BounceLayout.swift in Sources */,
 				F429D5011BE896AB0067194D /* ViewController.swift in Sources */,
 				F429D4FF1BE896AB0067194D /* AppDelegate.swift in Sources */,
 			);

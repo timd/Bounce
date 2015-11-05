@@ -12,11 +12,19 @@ class ViewController: UIViewController {
 
     @IBOutlet var collectionView: UICollectionView!
     var cvData = [String]()
+    var layout: BounceLayout!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        layout = BounceLayout()
+        layout.itemSize = CGSizeMake(50, 50)
+        self.collectionView.setCollectionViewLayout(layout, animated: false)
+        
         setupData()
+        setupCollectionView()
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,19 +37,58 @@ class ViewController: UIViewController {
 extension ViewController {
 
     func setupData() {
-        for index in 0...200 {
+        
+        for index in 0...0 {
             cvData.append("\(index)")
         }
+        
     }
     
     func setupCollectionView() {
         
-    }
-    
-    @IBAction func didTap(sender: AnyObject) {
+        layout = BounceLayout()
+        layout.itemSize = CGSizeMake(75,75)
+        layout.sidePadding = 10
+        
+        collectionView.collectionViewLayout = layout
         
     }
     
+    @IBAction func didTapAdd(sender: AnyObject) {
+
+        // Get index of last item
+        let index = cvData.count
+        
+        cvData.append("\(index)")
+
+        // Create an NSIndexPath object for the new item
+        let newItemIndexPath = NSIndexPath(forItem: index, inSection: 0)
+
+        // Now update the collection view
+        collectionView.insertItemsAtIndexPaths([newItemIndexPath])
+    
+    }
+
+    @IBAction func didTapRemove(sender: AnyObject) {
+        
+        // Don't attempt to remove the last item!
+        if cvData.count == 1 {
+            return
+        }
+        
+        // Get index of last item
+        let index = cvData.count - 1
+        
+        // Remove it from the data array
+        cvData.removeAtIndex(index)
+        
+        // Create an NSIndexPath object for the item being removed
+        let removedIndexPath = NSIndexPath(forItem: index, inSection: 0)
+        
+        // Now update the collection view
+        collectionView.deleteItemsAtIndexPaths([removedIndexPath])
+
+    }
 }
 
 extension ViewController: UICollectionViewDataSource {
@@ -69,4 +116,3 @@ extension ViewController: UICollectionViewDataSource {
     }
     
 }
-
